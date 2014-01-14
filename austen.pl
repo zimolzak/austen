@@ -15,5 +15,13 @@ $content =~ s/([.!?])[\s-]+(\"[A-Z])/$1####$2/g; # start of quote
 $content =~ s/([MD]rs?\.)####([A-Z])/$1 $2/g; # Mr. Mrs. Dr.
 
 my @x = split(/####/, $content); 
-my $y = join(" ####\n", @x);
-print $y;
+my $y = join("\n", @x);
+# print $y;
+
+my $i = 0;
+my $title = (split (/[ \.]/, $ARGV))[1]; # all of form "123 title.doc"
+print "len,book\n"; #csv header
+while ($i <= $#x) {
+    print length($x[$i]) . ",$title\n";
+    $i++;
+}
