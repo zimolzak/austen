@@ -1,0 +1,14 @@
+Take a bunch of text documents, assemble them into one corpus. Plot
+the distribution of sentence length.
+
+Run ./make.sh first.
+
+Then use R to interpret logplot.R. Consider going line by line thru
+plots. It doesn't pause.
+
+I am running this on the complete works of Jane Austen, from Project
+Gutenberg. make.sh expects files of names like "161 sense.doc". I
+named them .DOC so Git can ignore them. But they are just plain text.
+
+Internal details: make.sh will repeatedly run Perl that handles this:
+(linebroken text --> CSV of sentence length).

@@ -1,5 +1,13 @@
 #!/usr/bin/perl -w
-# example: cat *.doc | ./austen.pl | grep -i darcy | grep -i love
+#
+# Take a text file with linebreaks (like at column 80), find
+# sentences, and output CSV of lengths of those sentences.
+#
+# usage: ./austen.pl 161\ sense.doc > sense.csv
+#
+# previously it used to print out one sentence per line, a la...
+# cat *.doc | ./austen.pl | grep -i darcy | grep -i love
+
 use strict;
 
 local $/; # enable localized slurp mode
